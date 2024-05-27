@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ff-text: "Roboto", sans-serif;
+  --text-color: hsl(240, 6%, 17%);
+  --text-color-btn: hsl(0, 0%, 100%);
+  --bg-color: hsl(0, 0%, 100%);
+  --cards-bg-color: hsl(240, 62%, 80%);
+  --controls-color: hsl(240, 62%, 65%);
+
+  font-size: clamp(40%, 1% + 1vw, 62.5%);
+}
+
+html.dark-mode {
+  --text-color: hsl(0, 0%, 100%);
+  --bg-color: hsl(240, 6%, 17%);
+}
+
+body {
+  display: grid;
+  place-content: center;
+  font-family: var(--ff-text);
+  font-weight: 500; 
+  height: 100vh;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+#page {
+  display: flex;
+  gap: 19.2rem;
+  width: max-content;
+  align-items: center;
+}
+
+#toggle-mode {
+  position: absolute;
+  right: 3.2rem;
+  top: 3.2rem;
+  font-size: 4rem;
+  background-color: transparent;
+  border: none;
+}
+
+.ph-moon {
+  color: var(--text-color-btn);
+}
+
+.hide {
+  display: none;
+}
+
+.sr-only {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0px;
+  border: 0;
+  appearance: none;
+}
+
+#timer-container {
+  text-align: center;
+}
+
+span {
+  font-size: 12.6rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+#controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+#controls button {
+  font-size: 4.8rem;
+  border: none;
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+#controls .ph:hover {
+  color: var(--controls-color);
+  transform: scale(1.1);
+}
+
+.running .ph-play-circle,
+html:not(.running) .ph-pause-circle {
+  display: none;
+} 
+
+#cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.2rem;
+}
+
+#cards button {
+  width: 13.8rem;
+  height: 15.2rem;
+  font-size: 6rem;
+  border-radius: 2.4rem;
+  border: transparent;
+  transition: 0.3s;
+}
+
+#cards button:hover {
+  background-color: var(--cards-bg-color);
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+#cards .ph:hover {
+  color: var(--text-color-btn);
+}
+
+#cards .ph:focus {
+  background-color: var(--cards-bg-color);
+  color: var(--text-color-btn);
+}
+
+
+
+
